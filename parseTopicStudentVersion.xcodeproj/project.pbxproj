@@ -29,6 +29,7 @@
 		19AFF69D19A222B300A96D5C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19AFF69C19A222B300A96D5C /* Parse.framework */; };
 		344A991719FFE4BD00C24B46 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344A991619FFE4BD00C24B46 /* Bolts.framework */; };
 		344A991A19FFE9CF00C24B46 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 344A991919FFE9CF00C24B46 /* Person.m */; };
+		344A991D19FFED1B00C24B46 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 344A991C19FFED1B00C24B46 /* Dog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,8 @@
 		344A991619FFE4BD00C24B46 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		344A991819FFE9CF00C24B46 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		344A991919FFE9CF00C24B46 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		344A991B19FFED1B00C24B46 /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dog.h; path = ../Dog.h; sourceTree = "<group>"; };
+		344A991C19FFED1B00C24B46 /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dog.m; path = ../Dog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,10 @@
 		190D1AF519A7981C00D491B9 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				344A991B19FFED1B00C24B46 /* Dog.h */,
+				344A991C19FFED1B00C24B46 /* Dog.m */,
+				344A991819FFE9CF00C24B46 /* Person.h */,
+				344A991919FFE9CF00C24B46 /* Person.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -123,8 +130,6 @@
 				19AFF66719A2220400A96D5C /* PeopleViewController.m */,
 				193EFE9819F8868000EF090A /* DogViewController.h */,
 				193EFE9919F8868000EF090A /* DogViewController.m */,
-				344A991819FFE9CF00C24B46 /* Person.h */,
-				344A991919FFE9CF00C24B46 /* Person.m */,
 				190D1AF519A7981C00D491B9 /* Data Model */,
 				19AFF66919A2220400A96D5C /* Main.storyboard */,
 				19AFF66C19A2220400A96D5C /* Images.xcassets */,
@@ -243,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				344A991D19FFED1B00C24B46 /* Dog.m in Sources */,
 				19AFF66819A2220400A96D5C /* PeopleViewController.m in Sources */,
 				19AFF66519A2220400A96D5C /* AppDelegate.m in Sources */,
 				344A991A19FFE9CF00C24B46 /* Person.m in Sources */,
