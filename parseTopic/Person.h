@@ -11,8 +11,8 @@
 
 @interface Person : PFObject <PFSubclassing>
 
-@property NSString *age;
-@property NSNumber *name;
+@property NSNumber *age;
+@property NSString *name;
 
 - (BOOL)isTeenager;
 

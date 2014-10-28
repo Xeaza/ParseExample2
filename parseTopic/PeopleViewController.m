@@ -9,6 +9,7 @@
 #import "PeopleViewController.h"
 #import <Parse/Parse.h>
 #import "DogViewController.h"
+#import "Person.h"
 
 @interface PeopleViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,11 +24,14 @@
 {
     return self.persons.count;
 }
+
 - (void)addPersonWithName:(NSString *)name andAge:(NSNumber *)age
 {
 
 }
-- (IBAction)onAddPersonButtonTapped:(id)sender {
+
+- (IBAction)onAddPersonButtonTapped:(id)sender
+{
 
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"New Owner" message:nil preferredStyle:UIAlertControllerStyleAlert];
 
@@ -53,12 +57,23 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PersonCell"];
-
+    Person *person = [self.persons objectAtIndex:indexPath.row];
+    cell.textLabel.text = person.name;
     return cell;
 }
 
 - (void) refreshDisplay
 {
+    PFQuery *personQuery = [PFQuery queryWithClassName:[Person parseClassName]];
+    [personQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@",error.localizedDescription);
+        }
+        else {
+            self.persons = objects;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
