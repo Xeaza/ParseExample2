@@ -27,7 +27,12 @@
 
 - (void)addPersonWithName:(NSString *)name andAge:(NSNumber *)age
 {
-
+    Person *person = [Person object];
+    person.name = name;
+    person.age = age;
+    [person saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [self refreshDisplay];
+    }];
 }
 
 - (IBAction)onAddPersonButtonTapped:(id)sender
