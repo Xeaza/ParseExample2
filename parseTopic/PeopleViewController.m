@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "DogViewController.h"
 #import "Person.h"
+#import "Dog.h"
 
 @interface PeopleViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -64,6 +65,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PersonCell"];
     Person *person = [self.persons objectAtIndex:indexPath.row];
     cell.textLabel.text = person.name;
+    PFQuery *dogsQuery = [Dog query];
+    [dogsQuery whereKey:@"owner" equalTo:person];
+    [dogsQuery countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+        cell.detailTextLabel.text = @(number).stringValue;
+    }];
     return cell;
 }
 
